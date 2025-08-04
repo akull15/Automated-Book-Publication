@@ -1,0 +1,12 @@
+playwright
+openai
+chromadb
+fastapi
+uvicorn
+pyttsx3
+speechrecognition
+transformers
+scikit-learn
+sentence-transformers
+pydantic
+python-dotenv
