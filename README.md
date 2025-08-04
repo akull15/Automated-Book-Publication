@@ -6,8 +6,7 @@ A fully agentic AI-powered system that:
 - Refines them through AI + human feedback loops 🧠
 - Tracks versions using ChromaDB 🔄
 - Offers voice agent interaction 🎤
-
-> 💡 Built during an internship evaluation for Soft-Nerve  
+ 
 > 👨‍💻 Developed using OpenAI/Gemini, FastAPI, ChromaDB, and RL-based scoring
 
 ---
@@ -34,8 +33,15 @@ A fully agentic AI-powered system that:
 
 ---
 
-## 🛠️ Tech Stack
+## 🖼️ UI Preview
 
+| Response | 
+|-----------|
+| ![](./1.png) |
+
+---
+
+## 🛠️ Tech Stack
 | Tool | Purpose |
 |------|---------|
 | Python | Core language |
@@ -49,9 +55,56 @@ A fully agentic AI-powered system that:
 
 ---
 
-## 🧪 Usage
+##🔧 How It Works
+This workflow automates rewriting book chapters using AI, with human feedback and version control.
+-🌐 Scrape & Snapshot
+Playwright extracts text and screenshots from chapter URLs.
 
-### ▶️ Run ChromaDB
+-✍️ AI Writing & Review
+Text is rewritten using GPT-4 or Gemini Pro, then refined by an AI Reviewer.
 
-```bash
-chromadb run --path ./chromadb
+-🏆 RL-Based Scoring
+Similarity between original and rewritten versions is scored using sentence embeddings.
+
+-🧠 Human-in-the-Loop + Versioning
+Multiple review cycles supported. Versions tracked with ChromaDB and searchable semantically.
+
+-🗣️ Voice Interaction + API
+Voice input/output supported. FastAPI backend exposes /spin/ endpoint for integration.
+
+---
+
+##🌱 Future Scope & Improvements
+-🌐 Web UI: Add a clean frontend using React or Streamlit for better UX.
+-🔁 Real RL Training Loop: Replace static reward score with fine-tuning loop.
+-🗂️ User Dashboard: Save chapter history, compare versions visually.
+-🧠 Human Feedback Ingestion: Allow human feedback to influence next generations.
+-🔊 TTS + STT Overhaul: Integrate Whisper or ElevenLabs for more accurate voice I/O.
+-☁️ Cloud Deployment: Deploy on AWS/GCP with ChromaDB in Docker + FastAPI backend.
+
+---
+
+## 📁 Folder Structure
+Automated_Book_Publication/
+│
+├── ai_agents/
+│   ├── writer.py
+│   └── reviewer.py
+│
+├── api/
+│   └── agentic_api.py
+│
+├── human_in_loop/
+│   └── versioning.py
+│
+├── rl/
+│   └── reward.py
+│
+├── scraping/
+│   └── scraper.py
+│
+├── utils/
+│   └── voice_support.py
+│
+├── .env
+├── requirements.txt
